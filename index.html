@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="重庆蓝脑慧策科技有限公司（蓝脑星球）：企业AI培训、企业咨询、自媒体运营、招商营销、AI创业与OPC孵化、客户交付。">
+  <meta name="theme-color" content="#16324F">
+  <meta property="og:title" content="蓝脑星球 · 重庆蓝脑慧策科技有限公司">
+  <meta property="og:description" content="把认知、AI 与自媒体方法落到业务上。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/teacher-stage.jpg">
+  <title>蓝脑星球 · 重庆蓝脑慧策科技有限公司</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --ink: #152536;
+      --muted: #5A6570;
+      --navy: #16324F;
+      --navy-2: #1C3E5C;
+      --blue: #215A8C;
+      --gold: #B0894F;
+      --paper: #F6F4EF;
+      --card: #FFFcf7;
+      --line: #E4DFD6;
+      --white: #ffffff;
+      --max: 1080px;
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .skip {
+      position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff; padding: 8px 12px; z-index: 100;
+    }
+    .skip:focus { left: 12px; top: 12px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(246, 244, 239, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 64px; gap: 16px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--navy); font-weight: 700; font-size: 18px; letter-spacing: 0.04em;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .brand:hover { text-decoration: none; color: var(--navy); }
+    .brand svg { width: 28px; height: 28px; }
+    nav.links { display: flex; align-items: center; gap: 22px; }
+    nav.links a {
+      color: var(--ink); font-size: 14px; text-decoration: none;
+    }
+    nav.links a:hover { color: var(--blue); }
+    .nav-cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--navy); color: #fff !important;
+      font-size: 13px; padding: 8px 16px; border-radius: 999px;
+      text-decoration: none !important; letter-spacing: 0.04em;
+    }
+    .nav-cta:hover { background: var(--blue); }
+    .menu-toggle {
+      display: none; border: 0; background: transparent; width: 40px; height: 40px;
+      cursor: pointer; position: relative;
+    }
+    .menu-toggle span, .menu-toggle span:before, .menu-toggle span:after {
+      position: absolute; left: 10px; width: 20px; height: 2px; background: var(--navy); content: "";
+    }
+    .menu-toggle span { top: 19px; }
+    .menu-toggle span:before { top: -6px; }
+    .menu-toggle span:after { top: 6px; }
+
+    /* Hero */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 72px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:after {
+      content: "";
+      position: absolute; right: -80px; top: -80px;
+      width: 340px; height: 340px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+    .hero:before {
+      content: "";
+      position: absolute; right: -20px; top: -20px;
+      width: 220px; height: 220px; border-radius: 50%;
+      border: 1px solid rgba(176,137,79,0.28);
+      pointer-events: none;
+    }
+    .eyebrow {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px; letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 64px);
+      font-weight: 700; letter-spacing: 0.08em;
+      line-height: 1.15; margin-bottom: 18px;
+    }
+    .lead {
+      font-size: clamp(16px, 2.4vw, 20px);
+      color: rgba(255,255,255,0.9);
+      max-width: 28em; margin-bottom: 22px;
+    }
+    .quote {
+      font-size: 15px; color: rgba(255,255,255,0.7);
+      max-width: 34em; border-left: 2px solid var(--gold);
+      padding-left: 14px; line-height: 1.8; margin-bottom: 32px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 11px 22px; border-radius: 999px; font-size: 14px;
+      text-decoration: none !important; cursor: pointer; border: 0;
+    }
+    .btn-light { background: #fff; color: var(--navy); }
+    .btn-light:hover { background: #f0ece3; }
+    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-navy:hover { background: var(--blue); }
+
+    section { padding: 72px 0; }
+    .sec-head { margin-bottom: 36px; }
+    .sec-head h2 {
+      font-size: 26px; letter-spacing: 0.06em; color: var(--navy);
+      font-weight: 700;
+    }
+    .sec-head p { color: var(--muted); margin-top: 8px; font-size: 15px; }
+    .rule {
+      width: 36px; height: 2px; background: var(--gold); margin-bottom: 14px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start;
+    }
+    .about-grid p { color: var(--ink-soft, var(--muted)); font-size: 16px; margin-bottom: 16px; }
+    .about-grid p strong { color: var(--ink); font-weight: 600; }
+
+    /* Business */
+    .biz {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .biz article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 22px 24px;
+    }
+    .biz .num {
+      font-size: 12px; letter-spacing: 0.12em; color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .biz h3 { font-size: 18px; color: var(--navy); margin-bottom: 8px; font-weight: 600; }
+    .biz p { font-size: 14px; color: var(--muted); }
+
+    /* Teacher */
+    #teacher { background: var(--white); }
+    .teacher {
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: start;
+    }
+    .teacher figure img {
+      width: 100%; height: 420px; object-fit: cover; object-position: 30% 20%;
+      border-radius: 16px;
+    }
+    .teacher figcaption { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .titles { color: var(--blue); font-size: 14px; letter-spacing: 0.04em; margin: 6px 0 16px; }
+    .teacher .bio p { margin-bottom: 14px; color: var(--muted); font-size: 15px; }
+    .ideas {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 22px 0 16px;
+    }
+    .ideas div {
+      background: var(--paper); border-radius: 12px; padding: 14px 14px 16px;
+    }
+    .ideas h4 { font-size: 14px; color: var(--navy); margin-bottom: 4px; }
+    .ideas p { font-size: 12px; color: var(--muted); margin: 0 !important; line-height: 1.65; }
+    .way { font-size: 14px; color: var(--ink); }
+
+    /* Gallery */
+    .shots {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      grid-template-rows: 180px 180px;
+      gap: 12px;
+    }
+    .shots figure { margin: 0; overflow: hidden; border-radius: 12px; background: #ddd; height: 100%; }
+    .shots img { width: 100%; height: 100%; object-fit: cover; }
+    .shots .wide { grid-column: 1; grid-row: 1 / span 2; }
+    .shots .wide img { object-position: center 40%; }
+    .shots .s1 { grid-column: 2; grid-row: 1; }
+    .shots .s1 img, .shots .s2 img { object-fit: cover; object-position: center; background: #fff; }
+    .shots .s2 { grid-column: 2; grid-row: 2; }
+
+    /* Courses */
+    .formats { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+    .courses {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .course-group {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .course-group h3 { font-size: 17px; color: var(--navy); }
+    .course-group .sub { font-size: 12px; color: var(--gold); letter-spacing: 0.06em; margin: 4px 0 14px; }
+    .course-group li {
+      list-style: none; padding: 10px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .course-group li:first-of-type { border-top: 0; padding-top: 0; }
+    .course-group li span { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+
+    /* Contact */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    }
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      background: var(--paper);
+    }
+    .contact-card dt { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 4px; }
+    .contact-card dd { font-size: 18px; color: var(--navy); font-weight: 600; word-break: break-all; }
+    .contact-card dd a { color: var(--navy); text-decoration: none; }
+    .contact-card dd a:hover { color: var(--blue); }
+    .copy-btn {
+      margin-top: 8px; font-size: 12px; color: var(--blue);
+      background: none; border: 0; cursor: pointer; padding: 0; font-family: inherit;
+    }
+    .note { margin-top: 20px; color: var(--muted); font-size: 14px; }
+
+    footer {
+      background: var(--navy); color: rgba(255,255,255,0.72);
+      padding: 28px 0; text-align: center; font-size: 13px;
+    }
+    footer p { margin: 0; }
+
+    @media (max-width: 860px) {
+      .menu-toggle { display: block; }
+      nav.links {
+        display: none; position: absolute; left: 0; right: 0; top: 64px;
+        background: var(--paper); border-bottom: 1px solid var(--line);
+        flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 16px;
+      }
+      header.open nav.links { display: flex; }
+      nav.links a, nav.links .nav-cta { padding: 12px 0; }
+      nav.links .nav-cta { display: inline-flex; align-self: flex-start; padding: 8px 16px; margin: 8px 0; }
+      .about-grid, .teacher, .contact-grid, .courses, .biz {
+        grid-template-columns: 1fr;
+      }
+      .teacher figure img { height: 280px; }
+      .ideas { grid-template-columns: 1fr; }
+      .shots {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 140px;
+      }
+      .shots .wide { grid-column: 1 / span 2; grid-row: 1; }
+      .shots .s1 { grid-column: 1; grid-row: 2; }
+      .shots .s2 { grid-column: 2; grid-row: 2; }
+      section { padding: 56px 0; }
+      .hero { padding: 52px 0 60px; }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 32px); }
+      .biz { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="蓝脑星球 首页">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="11.5" stroke="#16324F" stroke-width="1.6"/>
+          <ellipse cx="16" cy="16" rx="16" ry="5.2" stroke="#B0894F" stroke-width="1.4"/>
+          <circle cx="20.5" cy="12.5" r="1.6" fill="#215A8C"/>
+        </svg>
+        蓝脑星球
+      </a>
+      <button class="menu-toggle" type="button" aria-label="打开菜单" aria-expanded="false"><span></span></button>
+      <nav class="links" aria-label="页面导航">
+        <a href="#about">公司</a>
+        <a href="#business">业务</a>
+        <a href="#teacher">介绍</a>
+        <a href="#courses">课程</a>
+        <a class="nav-cta" href="#contact">联系我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="eyebrow">重庆蓝脑慧策科技有限公司</p>
+        <h1>蓝脑星球</h1>
+        <p class="lead">把认知、AI 与自媒体方法落到业务上。</p>
+        <p class="quote">真正能赚钱，不在于知道多少，而在于认知是否正确；<br>真正能成长，不在于忙碌多少，而在于认知是否升级。</p>
+        <div class="actions">
+          <a class="btn btn-light" href="#business">了解业务</a>
+          <a class="btn btn-ghost" href="#contact">联系我们</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="about-grid">
+          <div>
+            <div class="sec-head">
+              <div class="rule"></div>
+              <h2>公司简介</h2>
+            </div>
+            <p>重庆蓝脑慧策科技有限公司，对外品牌为「蓝脑星球」。我们把哲学智慧、AI 技术、自媒体运营和企业咨询实践结合起来，帮助企业和个人发现机会、解决问题、创造价值。</p>
+            <p>真正的竞争力，不在于知道多少，而在于认知是否正确、方法是否落地。因此我们的工作方式强调实践、教导和半陪跑：不只提供方案，也陪伴完成落地执行。</p>
+          </div>
+          <div>
+            <div class="sec-head">
+              <div class="rule"></div>
+              <h2>合作形式</h2>
+            </div>
+            <p>在线课程 · 线下沙龙 · 企业定制培训 · 一对一咨询陪跑</p>
+            <p>面向企业、创业者与个人，按具体需求选择课程学习、企业培训或陪跑交付。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="business">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rule"></div>
+          <h2>业务</h2>
+          <p>六项对外业务，按企业与个人的实际需要组合使用。</p>
+        </div>
+        <div class="biz">
+          <article>
+            <div class="num">01</div>
+            <h3>企业AI培训</h3>
+            <p>面向企业团队，开展 AI 工具与应用培训，帮助大家会用、用起来。</p>
+          </article>
+          <article>
+            <div class="num">02</div>
+            <h3>企业咨询</h3>
+            <p>围绕企业实际问题，提供咨询与落地建议。</p>
+          </article>
+          <article>
+            <div class="num">03</div>
+            <h3>自媒体运营</h3>
+            <p>帮助个人与企业做内容策划、账号运营与增长。</p>
+          </article>
+          <article>
+            <div class="num">04</div>
+            <h3>招商营销</h3>
+            <p>配合招商与营销需求，开展相关传播与获客工作。</p>
+          </article>
+          <article>
+            <div class="num">05</div>
+            <h3>AI创业 / OPC孵化</h3>
+            <p>为 AI 创业与 OPC 孵化提供方法支持与陪伴。</p>
+          </article>
+          <article>
+            <div class="num">06</div>
+            <h3>客户交付</h3>
+            <p>把已经确定的方案，推进到可执行的交付结果。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teacher">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rule"></div>
+          <h2>善意老师</h2>
+        </div>
+        <div class="teacher">
+          <figure>
+            <img src="assets/img/teacher-stage.jpg" alt="吕善意在活动现场演讲" width="1280" height="853">
+            <figcaption>培训与分享现场</figcaption>
+          </figure>
+          <div class="bio">
+            <h3 style="font-size:28px;color:var(--navy);letter-spacing:0.04em;">吕善意（善意纯阳）</h3>
+            <p class="titles">企业战略顾问 · AI赋能导师 · 自媒体增长专家</p>
+            <p>吕善意，亦称善意纯阳，生于河北。自小研习《周易》《道德经》与禅宗故事，探索东方智慧与现代认知的结合，逐步形成融通古今的思维体系。</p>
+            <p>二十余年的创业与企业咨询经历，使他深信：真正的竞争力，不在于知道多少，而在于认知是否正确、方法是否落地。他将哲学智慧、AI 技术、自媒体运营和企业咨询实践融为一体，帮助企业和个人快速发现机会、解决问题、创造价值。</p>
+            <div class="ideas">
+              <div>
+                <h4>认知决定行动</h4>
+                <p>正确的认知是起点，行动是把认知变成价值的路径。认知的差距，才是最根本的差距。</p>
+              </div>
+              <div>
+                <h4>工具与方法要落地</h4>
+                <p>再好的工具和方法，只有与实际业务结合起来，才能真正提效。</p>
+              </div>
+              <div>
+                <h4>价值交换是本质</h4>
+                <p>为他人创造真实价值，并拥有稀缺且难以替代的能力，才是长久的根基。</p>
+              </div>
+            </div>
+            <p class="way">工作方式强调<strong>实践、教导和半陪跑</strong>：不仅提供方案，还陪伴企业与个人完成落地。学习不只是获取知识，而是通过实践不断验证和提升认知。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rule"></div>
+          <h2>现场与课程</h2>
+          <p>培训现场 · 课程花絮 · 分享瞬间</p>
+        </div>
+        <div class="shots">
+          <figure class="wide">
+            <img src="assets/img/live-studio.jpg" alt="吕善意在工作室进行直播与培训" width="1800" height="831">
+          </figure>
+          <figure class="s1">
+            <img src="assets/img/lecture-hall.jpg" alt="讲座现场，学员举手互动" width="582" height="230">
+          </figure>
+          <figure class="s2">
+            <img src="assets/img/stage-talk.jpg" alt="吕善意在舞台上分享" width="569" height="299">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rule"></div>
+          <h2>课程与服务</h2>
+        </div>
+        <p class="formats">四大课程板块，可通过在线课程、线下沙龙、企业定制培训、一对一咨询陪跑进行。</p>
+        <div class="courses">
+          <div class="course-group">
+            <h3>创新课程</h3>
+            <p class="sub">创新思维与方法</p>
+            <ul>
+              <li>《思维跃迁：创新力训练营》<span>打破固有思维框架，实现认知升级</span></li>
+              <li>《未来密码：商业创新工作坊》<span>用系统方法解锁创新潜力</span></li>
+              <li>《破局者：认知创新实验室》<span>学会发现问题、设计解决方案</span></li>
+              <li>《点亮智慧：创新思维修炼》<span>将思维工具和方法融入实践</span></li>
+            </ul>
+          </div>
+          <div class="course-group">
+            <h3>AI课程</h3>
+            <p class="sub">人工智能赋能</p>
+            <ul>
+              <li>《AI赋能实验室：让工具为你工作》<span>学会用AI高效解决问题</span></li>
+              <li>《智能流量引擎：AI自媒体实战》<span>AI+自媒体，实现快速增量</span></li>
+              <li>《未来助手：数字人+AI落地》<span>用AI打造个人/企业数字化助手</span></li>
+              <li>《认知升级：AI工具精通营》<span>提升效率、洞察趋势、落地执行</span></li>
+            </ul>
+          </div>
+          <div class="course-group">
+            <h3>自媒体课程</h3>
+            <p class="sub">内容与流量运营</p>
+            <ul>
+              <li>《爆量密码：自媒体增长工作坊》<span>快速打造影响力账号</span></li>
+              <li>《流量炼金术：自媒体实战营》<span>从内容创作到粉丝转化</span></li>
+              <li>《内容裂变：短视频与图文策略课》<span>学会打造爆款内容</span></li>
+              <li>《品牌声量训练营：自媒体赋能》<span>个人/企业品牌快速塑造</span></li>
+            </ul>
+          </div>
+          <div class="course-group">
+            <h3>文化觉醒课程</h3>
+            <p class="sub">传统文化与认知训练</p>
+            <ul>
+              <li>《觉醒智慧：国学与认知训练》<span>学会用传统智慧解决现代问题</span></li>
+              <li>《底层代码：哲学+思维修炼营》<span>融合周易、道德经、禅宗</span></li>
+              <li>《文化启航：认知升级与心智训练》<span>让心态、思维和价值观升级</span></li>
+              <li>《善意课堂：智慧与实践融合》<span>用文化底蕴赋能人生和事业</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="rule"></div>
+          <h2>联系我们</h2>
+          <p>欢迎企业、创业者及个人咨询合作。</p>
+        </div>
+        <div class="contact-grid">
+          <dl class="contact-card">
+            <dt>微信</dt>
+            <dd id="wechat-id">18696801133</dd>
+            <button class="copy-btn" type="button" data-copy="18696801133">复制微信号</button>
+          </dl>
+          <dl class="contact-card">
+            <dt>邮箱</dt>
+            <dd><a href="mailto:CD396@qq.com">CD396@qq.com</a></dd>
+          </dl>
+          <dl class="contact-card">
+            <dt>联系人</dt>
+            <dd>米妮小安　五里龙虾社</dd>
+          </dl>
+          <dl class="contact-card">
+            <dt>合作形式</dt>
+            <dd style="font-size:16px;font-weight:500;">在线课程 · 线下沙龙 · 企业定制培训 · 一对一咨询陪跑</dd>
+          </dl>
+        </div>
+        <p class="note">学习不只是获取知识，而是通过实践不断验证和提升认知。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>重庆蓝脑慧策科技有限公司</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var header = document.querySelector("header");
+      var toggle = document.querySelector(".menu-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var open = header.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          toggle.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
+        });
+        header.querySelectorAll("nav a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            header.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+      document.querySelectorAll("[data-copy]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var text = btn.getAttribute("data-copy") || "";
+          function ok() { btn.textContent = "已复制"; setTimeout(function () { btn.textContent = "复制微信号"; }, 1600); }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(ok).catch(function () {
+              window.prompt("请复制微信号", text);
+            });
+          } else {
+            window.prompt("请复制微信号", text);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
